@@ -29,7 +29,7 @@ export default function Project(props) {
                 </div>
             </div>
             <div className="project-image">
-                <img src={require(`../images/projects/${props.img}`)} alt="MondBank" />
+                <img src={require(`../images/projects/${props.img}`)} alt={props.name} />
             </div>
         </div>
     )

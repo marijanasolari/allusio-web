@@ -1,13 +1,17 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import appLogo from "../images/logo.svg"
-import menuIcon from "../images/icon-menu.svg"
 
 export default function Header() {
-    return (
-        <header>
+
+  return (
+    <header>
+
+        <Link to="/">
             <img src={appLogo} alt="Allusio Logo" />
-            <img src={menuIcon} alt="Menu icon"  />
-        </header>
-    )
+        </Link>
+
+    </header>
+  )
 }

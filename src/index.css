@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
 @font-face {
@@ -14,6 +16,12 @@ html {
     font-family: 'Geomanist';
     font-style: normal;
     font-weight: 400;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
 }
 
 h1 {
@@ -68,7 +76,9 @@ ul {
     justify-content: space-between;
     align-items: center;
     flex-grow: 2;
-    padding: 24px 32px;
+    padding: 24px;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 header {
@@ -84,18 +94,26 @@ main {
 }
 
 #mainNav {
-    display: none;
+    position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 0px 72px;
-    margin: 0;
-    gap: 16px;
 
+    box-sizing: border-box;
     width: 285px;
     height: 100vh;
 
     background: #FFFFFF;
+
+    transition: 0.3s ease-in-out;
+}
+
+#mainNav #menuIcon {
+    position: absolute;
+    top: 32px;
+    left: -52px;
 }
 
 #mainNav ul {
@@ -107,6 +125,8 @@ main {
     justify-content: center;
     align-items: flex-start;
     gap: 16px;
+
+    transition: 0.3s ease-in-out;
 }
 
 #mainNav li a:link, 
