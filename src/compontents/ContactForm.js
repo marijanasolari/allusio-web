@@ -1,6 +1,10 @@
+import { useRef } from 'react';
 import React from "react";
+import emailjs from '@emailjs/browser';
+import { Form } from 'react-router-dom';
 
 export default function ContactForm() {
+    const form = useRef();
     const [formData, setFormData] = React.useState(
         {
             fullName:"",
@@ -22,16 +26,21 @@ export default function ContactForm() {
         })
     }
 
-    function handleSubmit(event){
-        event.preventDefault()
-        console.log(formData)
-    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        emailjs.sendForm('service_yhpta8m', 'template_ake4hmn', form.current, 'gMcWDMDWYvjem_L7O')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
 
     return (
         <div id="contact">
             <h3>Contact me</h3>
             <h2>Hi there! 👋 I’d love to hear from you</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} ref={form}>
                 <div className="form--row">
                     <div className="form--element">
                         <label htmlFor="fullName">
