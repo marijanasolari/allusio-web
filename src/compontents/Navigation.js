@@ -5,7 +5,6 @@ import menuIcon from "../images/icon-menu.svg"
 
 export default function Navigation() {
     const [active, setActive] = React.useState(false);
-
     const handleClick = () => {
       setActive(!active);
     };  
@@ -18,7 +17,9 @@ export default function Navigation() {
             <button id="menuIcon" 
                 onClick={handleClick}
             >
-                <img src={menuIcon} alt="Menu icon"  />
+                <img src={menuIcon} alt="Menu icon" style={{ 
+                    transform: active ? "rotate(90deg)" : "rotate(0deg)"
+                }} />
             </button>
             <ul style={{ 
                 opacity: active ? "1" : "0"

@@ -8,7 +8,7 @@ export default function Footer() {
                 <li><a href="https://www.instagram.com/marijanasolari">Instagram</a></li>
                 <li><a href="https://dribbble.com/marijanasolari">Dribbble</a></li>
             </ul>
-            <p className="copyright">&copy; Allusio 2022</p>
+            <p className="copyright">&copy; Allusio 2023.</p>
         </footer>
     )
 }

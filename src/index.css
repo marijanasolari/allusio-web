@@ -90,7 +90,9 @@ header {
 }
 
 main {
-    width: 856px;
+    width: 100%;
+    max-width: 925px;
+
 }
 
 #mainNav {
@@ -114,6 +116,7 @@ main {
     position: absolute;
     top: 32px;
     left: -52px;
+    transition: 0.3s ease-in-out;
 }
 
 #mainNav ul {
@@ -143,14 +146,17 @@ main {
 }
 
 #home {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0px;
+    gap: 86px;
 }
 
 #home > .title {
+    width:fit-content;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -181,6 +187,38 @@ main {
     flex-grow: 0;
 }
 
+@media only screen and (max-width: 1130px) {
+    #home {
+        flex-direction: column;
+        text-align: center;
+        gap: 46px;
+    }
+    #home > .title h1 {
+        font-size: 76px;
+    }
+    
+    #home > .title h2 {
+        font-size: 20px;
+    }
+    #home > .image {
+        width: 273px;
+        height: 273px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #home > .title h1 {
+        font-size: 52px;
+    }
+    #home > .title h2 {
+        font-size: 16px;
+    }
+    #home > .image {
+        width: 210px;
+        height: 210px;
+    }
+}
+
 footer {
     width: 100%;
     display: flex;
@@ -197,7 +235,6 @@ footer > .socials {
     padding: 0px;
     margin: 0px;
     gap: 58px;
-
 }
 
 footer > .socials a:link,
@@ -217,6 +254,17 @@ footer > .copyright {
     justify-content: flex-end;
 }
 
+@media only screen and (max-width: 550px) {
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px
+    }
+    footer > .copyright {
+        justify-content: center;
+    }
+}
 
 #about p {
     font-weight: 500;
